@@ -43,8 +43,6 @@ export const DetailPage = () => {
       ) : (
         <div>Loading...</div>
       )}
-
-      <div>{pokemonName}</div>
     </div>
   );
 };

@@ -1,19 +1,45 @@
 import { Card } from "antd";
-const { Meta } = Card;
-const DetailCard = ({ image, title, id, height, weight }) => (
-  <Card
-    hoverable
-    style={{
-      width: "440px",
-      fontSize: "17px",
-    }}
-    cover={<img alt="example" src={image} />}
-  >
-    <div>Name: {title}</div>
-    <div>Height: {height}</div>
-    <div>Weight: {weight}</div>
+import { getColorFromUrl } from "../utils/fastColors";
+import { useEffect, useState } from "react";
 
-    <Meta description={id} />
-  </Card>
-);
+const { Meta } = Card;
+const DetailCard = ({ image, title, id, height, weight }) => {
+  const [pokemonColor, setPokemonColor] = useState(null);
+
+  const getPokemonColor = async () => {
+    const color = await getColorFromUrl(image);
+    if (color) setPokemonColor(color);
+  };
+
+  useEffect(() => {
+    getPokemonColor();
+  });
+
+  return (
+    <Card
+      hoverable
+      style={{
+        width: "440px",
+        fontSize: "17px",
+        backgroundColor: pokemonColor,
+      }}
+      cover={<img alt="example" src={image} />}
+    >
+      <div
+        style={{
+          fontWeight: "bold",
+          fontSize: "25px",
+          textAlign: "center",
+        }}
+      >
+        {title.toUpperCase()}
+      </div>
+      <div>Height: {height}</div>
+      <div>Weight: {weight}</div>
+
+      <Meta description={id} />
+    </Card>
+  );
+};
+
 export default DetailCard;
