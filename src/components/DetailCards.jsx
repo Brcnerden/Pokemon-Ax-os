@@ -1,5 +1,6 @@
 import { Card } from "antd";
 import { getColorFromUrl } from "../utils/fastColors";
+
 import { useEffect, useState } from "react";
 
 const { Meta } = Card;
@@ -16,29 +17,31 @@ const DetailCard = ({ image, title, id, height, weight }) => {
   });
 
   return (
-    <Card
-      hoverable
-      style={{
-        width: "440px",
-        fontSize: "17px",
-        backgroundColor: pokemonColor,
-      }}
-      cover={<img alt="example" src={image} />}
-    >
-      <div
+    <div>
+      <Card
+        id="card"
+        hoverable
         style={{
-          fontWeight: "bold",
-          fontSize: "25px",
-          textAlign: "center",
+          fontSize: "17px",
+          backgroundColor: pokemonColor,
         }}
+        cover={<img alt="example" src={image} />}
       >
-        {title.toUpperCase()}
-      </div>
-      <div>Height: {height}</div>
-      <div>Weight: {weight}</div>
+        <div
+          style={{
+            fontWeight: "bold",
+            fontSize: "25px",
+            textAlign: "center",
+          }}
+        >
+          {title.toUpperCase()}
+        </div>
+        <div>Height: {height}</div>
+        <div>Weight: {weight}</div>
 
-      <Meta description={id} />
-    </Card>
+        <Meta description={id} />
+      </Card>
+    </div>
   );
 };
 
