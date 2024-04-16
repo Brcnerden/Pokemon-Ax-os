@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemon } from "../redux/features/pokemon/pokemonSlice";
 import { Link } from "react-router-dom";
-import PokemonButton from "../components/Icon/PokemonButton";
 
 export const Home = () => {
   const dispatch = useDispatch();
