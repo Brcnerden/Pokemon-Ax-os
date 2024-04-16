@@ -16,18 +16,20 @@ const Cards = ({ image, title, description, id }) => {
   });
 
   return (
-    <Card
-      hoverable
-      style={{
-        width: 240,
-        margin: "10px",
-        backgroundColor: pokemonColor,
-      }}
-      cover={<img src={image} alt="al" />}
-    >
-      <div>{id}</div>
-      <Meta title={title} description={description} />
-    </Card>
+    <>
+      <Card
+        hoverable
+        style={{
+          width: 240,
+          margin: "10px",
+          backgroundColor: pokemonColor,
+        }}
+        cover={<img src={image} alt="al" />}
+      >
+        <div>{id}</div>
+        <Meta title={title} description={description} />
+      </Card>
+    </>
   );
 };
 

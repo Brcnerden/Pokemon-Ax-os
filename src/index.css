@@ -4,3 +4,25 @@
     width: 100%;
   }
 }
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../public/Cover.png");
+  background-color: #aa06a1;
+}
+
+img {
+  width: 70px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.button {
+  display: grid;
+  place-items: center;
+  margin: 80px;
+}
