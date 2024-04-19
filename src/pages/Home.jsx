@@ -24,6 +24,8 @@ export const Home = () => {
   return (
     <div>
       <div className="button">
+        <div className="text">POKEMON LIST</div>
+
         <button onClick={handleClick}>
           <img src="../../public/Pokebola-pokeball-png-0.png" />
         </button>

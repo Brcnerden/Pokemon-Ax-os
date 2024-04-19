@@ -26,3 +26,9 @@ button {
   place-items: center;
   margin: 80px;
 }
+
+.text {
+  margin-bottom: 80px;
+  font-size: 40px;
+  color: white;
+}
